@@ -36,4 +36,44 @@ enum Direction1 {
     Right = 4
 };
 
+enum Direction2 {
+    Up = "Up",
+    Down = "Down",
+    Left = "Left",
+    Right = "Right"
+}
+
 console.log(Direction1.Up);
+
+// objects
+// custom type
+type User = {
+    id: number,
+    name: string
+}
+const User: User = {
+    id: 2,
+    name: "donnie"
+}
+
+// type assertion
+let cid: any = 1;
+
+let customerId = <number>cid;
+let customId = cid as number;
+
+// functions
+const add = (a: number, b: number): number => {
+    return a + b;
+}
+
+console.log(add(4, 6));
+
+const log = (message: string | number): void => {
+    console.log(message);
+}
+
+console.log(log("hello"));
+
+// interfaces
+

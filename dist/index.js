@@ -53,3 +53,36 @@ const add = (a, b) => {
     return a + b;
 };
 console.log(add(4, 6));
+const log = (message) => {
+    console.log(message);
+};
+console.log(log("hello"));
+;
+const user1 = {
+    id: 23,
+    name: "John Doe",
+    age: 22
+};
+const add2 = (x, y) => x + y;
+const subtract = (x, y) => x - y;
+// classes
+class Person {
+    constructor(id, name) {
+        this.id = id,
+            this.name = name;
+    }
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+const nick = new Person(1, "Nick");
+const dave = new Person(2, "Dave");
+console.log(dave.register());
+class Employee extends Person {
+    constructor(id, name, position) {
+        super(id, name);
+        this.position = position;
+    }
+}
+const emp = new Employee(5, "Jane Doe", "manager");
+console.log(emp.register());

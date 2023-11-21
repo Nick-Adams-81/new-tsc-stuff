@@ -76,4 +76,56 @@ const log = (message: string | number): void => {
 console.log(log("hello"));
 
 // interfaces
+interface UserInterface {
+    readonly id: number,
+    name: string,
+    age?: number
+};
+
+const user1: UserInterface = {
+    id: 23,
+    name: "John Doe",
+    age: 22
+};
+
+interface mathFunc {
+    (x: number, y: number): number;
+} 
+
+const add2: mathFunc = (x: number, y: number): number => x + y;
+const subtract: mathFunc = (x: number, y: number): number => x - y;
+
+// classes
+class Person {
+    id: number
+    name: string
+
+    constructor(id: number, name: string) {
+        this.id = id,
+        this.name = name
+    }
+
+    register() {
+        return `${this.name} is now registered`;
+    }
+}
+
+const nick = new Person(1, "Nick");
+const dave = new Person(2, "Dave");
+
+console.log(dave.register());
+
+class Employee extends Person {
+    position: string
+
+    constructor(id: number, name: string, position: string) {
+        super(id, name);
+        this.position = position;
+    }
+}
+
+const emp = new Employee(5, "Jane Doe", "manager");
+console.log(emp.register());
+
+
 
